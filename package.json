@@ -1,0 +1,20 @@
+{
+  "name": "myblog",
+  "version": "1.0.0",
+  "description": "my first blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CJ",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookies": "^0.7.1",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0",
+    "node-mysql": "^0.4.2",
+    "swig": "^1.4.2",
+    "ueditor": "^1.2.3"
+  }
+}

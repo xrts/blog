@@ -1,0 +1,15 @@
+<ul class="pager">
+	{% if page <=1 %}
+	<li class="disabled previous"><a href="javascript:;"><i class="material-icons">上一页</i></a></li>
+	{% else %}
+	<li class="waves-effect previous"><a href="/?cid={{cid}}&page={{page-1}}"><i class="material-icons">上一页</i></a></li>
+	{% endif %}
+	{% if pages > 0 %}
+	<li class="active middle"><a href="javascript:;">{{page}} / {{pages}}</a></li>
+	{% endif %}
+	{% if page >= pages %}
+	<li class="disabled next"><a href="#!"><i class="material-icons">下一页</i></a></li>
+	{% else %}
+	<li class="waves-effect next"><a href="/?cid={{cid}}&page={{page+1}}"><i class="material-icons">下一页</i></a></li>
+	{% endif %}
+</ul>

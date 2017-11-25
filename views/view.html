@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+<div class="mainLeft">
+	<!-- 文章 -->
+	
+	<div class="listBox">
+		<h3>{{contents.title}}</h3>
+		<p class="colDefualt">
+			作者：<span class="colInfo">{{contents.author}}</span>
+			-时间：<span class="colInfo">{{contents.addDate|date('Y年m月d日 H:i:s',-8*60)}}</span>
+			-阅读：<span class="colInfo">{{contents.views}}</span>
+			-评论：<span id="commentC"  class="colInfo"></span>
+		</p>
+		
+		<p class="content">{{contents.content|safe}}</p>
+		<div class="function"><a href="javascript:history.go(-1);location=document.referrer">返回</a></div>
+	</div>
+
+
+
+	<div class="listBox message">
+		<h4 class="textLeft"> <strong>评论</strong> <span class="fr">一共有 <em id='messageCount'>0</em>条评论</span></h4>
+		
+		{% if userInfo.id %}
+		 <p class="textLeft clear">
+		 	<input type="hidden" name="contentid" id="contentId" value="{{contents.id}}" >
+			<textarea id="commitTextarea" class="commit_textarea" placeholder="请填写你的评论~" rows="20" cols="20" wrap="hard"></textarea>
+			<button id="messageBtn" class="submit commit_submit">提交</button>
+		</p> 
+		{% else %}
+
+		<p class="bgDanger danger" >您还没有登录，请先登录！</p>
+
+		{% endif %}
+
+		
+			<div  id="noComments"></div>
+		
+		
+		<div id="messageList" id="commitList" style="display: block;">
+			
+		</div>
+		<ul id="pager" class="pager">
+			
+			<li class="waves-effect previous"><a href="javascript:;"><i class="material-icons">上一页</i></a></li>
+		
+			<li class="active middle"><a href="javascript:;"></a></li>
+				
+			<li class="waves-effect next"><a href="javascript:;"><i class="material-icons">下一页</i></a></li>
+			
+		</ul>
+
+	</div>
+
+
+</div>
+
+{% endblock %}

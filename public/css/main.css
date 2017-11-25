@@ -1,0 +1,125 @@
+
+body{
+	background: rgba(233, 233, 233, 0.6);
+}
+
+.backImg{
+	background: url(../images/header_bg_01.jpg) no-repeat 50% 50% ; 
+	height: 150px;
+	text-align:center;
+	line-height: 150px;
+
+}
+
+.backImg img{
+	width: 80px;
+}
+
+main{
+	padding: 10px 200px;
+}
+
+@media screen and (max-width:768px){
+	main{
+		padding: 10px 50px;
+	}
+}
+
+@media screen and (max-width:992px) and (min-width:768px){
+	main{
+		padding:10px 100px;
+	}
+}
+.rightBox,.listBox{
+	//width: 50%;
+	padding: 20px 20px;
+	background: rgb(248, 248, 248);
+	margin-bottom: 30px;
+	border-bottom: 2px solid rgba(221, 221, 221, 1);
+}
+
+footer{
+	height: 50px;
+	display: block;
+}
+form p{
+	text-align: right;
+}
+.myInfo{
+	display: inline-block;
+	color: rgb(51, 122, 183);
+	height: 20px;
+	line-height: 58px;
+	width: 100%;
+	text-align: center;
+}
+
+footer{
+	background: url(../images/header_bg.jpg) no-repeat 50% 50% ; 
+	height: 100px;
+}
+
+footer div {
+	
+	line-height: 100px;
+	text-align: center;
+	font-size: 14px;
+	color: white;
+}
+
+.fr{
+	float: right;
+}
+
+.bgDanger{
+	line-height: 30px;
+	height: 30px;
+	background: rgb(242, 222, 222);
+	color: rgb(169, 68, 101);
+	text-align: center;
+}
+.name{
+	font-weight: bold;
+}
+
+.commit_textarea{
+	height: 80px;
+	width: 85%;
+	margin: 0;
+	padding: 0;
+	border-color: rgb(50, 122, 183);
+
+}
+
+.commit_submit{
+	height: 80px;
+	width: 15%;
+	float: right;
+	margin: 0;
+	padding: 0;
+	background: rgb(50, 122, 183);
+	border-width: 0;
+	color: white;
+}
+
+.commit_submit:hover{
+	background: rgb(40, 96, 144);
+}
+
+.messageBox{
+	border-bottom: rgb(241, 241, 241) solid 3px;
+	padding: 15px 0;
+}
+
+p{
+	word-wrap:break-word;
+}
+
+.colInfo{
+	color: rgb(50, 122, 183);
+}
+
+
+
+
+

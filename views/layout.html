@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 兼容IE各个版本，内置了Chrome插件的用Chrome内核 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- 给浏览器指定内核 -->
+	<meta name="renderer" content="webkit">
+	 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> 
+	 <script src="/public/ueditor/ueditor.parse.js"></script>
+	<title>cj</title>
+	<link rel="stylesheet" href="/public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/public/css/normalize.min.css">
+	<link rel="stylesheet" href="/public/css/main.css">
+
+</head>
+<body>
+	<!-- 头部开始 -->
+	<header>
+		<div class="backImg"><img src="/public/images/my.png"></div>
+	</header>
+	<!-- 头部结束 -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!-- 导航条开始 -->
+	<nav>
+		<div class="navbar navbar-default">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">CJ</a>
+				<button data-toggle="collapse" data-target="#intel-collapse" class="navbar-toggle" type="button">
+             		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+          		</button>				
+			</div>
+
+			<div id="intel-collapse" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+
+					{% if cid %}
+					<li ><a href="/" >首页</a></li>
+					{% else %}
+            		<li class="active"><a href="/" >首页</a></li>
+					{% endif %}
+            		
+            		{% for cate in categories %}
+            		{% if cid == cate.id %}       		
+            		<li class="active"><a href="/?cid={{cate.id}}">{{cate.name}}</a></li>
+            		{% else %}
+            		<li><a href="/?cid={{cate.id}}">{{cate.name}}</a></li>
+            		{% endif %}
+            		{% endfor %}
+          		</ul> 
+			</div>
+
+		</div>
+	</nav>
+	<!-- 导汗条结束 -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!-- 主体开始 -->
+	<main >		
+		<div class="row">
+			<!-- 主体右边 -->
+			<div class="col-sm-4 col-sm-push-8 col-xs-12">
+				<div class="row">
+				<div class="mainRight ">
+					<!-- 用户信息框 -->
+					{% if userInfo.id %}
+					<div class="rightBox" id="adminBox" >
+						<h3>用户信息</h3>
+						{% if userInfo.isAdmin %}
+						<p class="username">{{'您好,管理员'+userInfo.myusername}}</p>
+						<p ><a href="/admin"><span>进入我的管理中心</span></a></p>
+						{% else %}
+						<p class="username">{{'您好'+userInfo.myusername}}</p>
+						<p class="userInfo">{{'欢迎登录我的博客~~'}}</p>
+						{% endif %}
+						<a class="loginOut" href="javascript:;">退出</a>
+					</div>
+					{% else %}
+
+
+					<!-- 登录框 -->
+					<div class="rightBox" id="loginBox" >
+						<h3>登录</h3>
+						<form action="#"  class="form-horizontal">
+							<div class="form-group ">
+								<label class="col-xs-2 control-label"  for="username"><span class="glyphicon glyphicon-user"></span></label>
+								<div class="col-xs-10">
+								<input class="form-control" placeholder="用户名" type="text"  name="username" id="username">
+								<!-- <span class="help-block">用户名长度在3-10个单位</span> -->
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-2 control-label"  for="pwd"><span class="glyphicon glyphicon-lock"></span></label>
+								<div class="col-xs-10">
+								<input class="form-control" placeholder="密码" type="password" name="pwd" id="pwd">
+								<!-- <span class="help-block">密码中必须包含数字、字母</span> -->
+							</div>
+							</div>
+
+							<div class="form-group">
+						       
+						      <input  type="button" class="btn btn-primary btn-block loginBtn" value="登录">
+
+						      <input type="button" class="btn  btn-block myreset" value="重置"> 
+
+    							<span class="myInfo"></span>
+    						</div>
+ 							<p >  没有账号？ <a href="javascript:;">点击注册</a></p>
+
+						</form>
+					</div>
+					<!-- 注册框 -->
+					<div class="rightBox" id="registerBox" style="display: none;"   >
+						<h3>注册</h3>
+						<form method="post" action="/api/user/register" class="form-horizontal">
+							<div class="form-group ">
+								<label class="col-xs-2 control-label"  for="username"><span class="glyphicon glyphicon-user"></span></label>
+								<div class="col-xs-10">
+								<input class="form-control" placeholder="用户名" type="text"  name="username" id="username">
+								<!-- <span class="help-block">用户名长度在3-10个单位</span> -->
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-2 control-label"  for="pwd"><span class="glyphicon glyphicon-lock"></span></label>
+								<div class="col-xs-10">
+								<input class="form-control" placeholder="密码" type="password" name="pwd" id="pwd">
+								<!-- <span class="help-block">密码中必须包含数字、字母</span> --> 
+							</div>
+						</div>
+							<div class="form-group">
+								<label class="col-xs-2 control-label"  for="repwd"><span class="glyphicon glyphicon-lock"></span></label>
+								<div class="col-xs-10">
+								<input class="form-control" placeholder="确认密码" type="password" name="repwd" id="repwd">
+								
+							</div>
+							</div>
+
+							<div class="form-group">
+						       
+						      <input type="button" class="btn btn-primary btn-block " value="注册">
+
+						      <input type="button" class="btn  btn-block  " value="重置">  <span class="myInfo"></span> 						
+    						</div>
+
+    						<p>已有账号？ <a href="javascript:;">点击登录</a></p>
+						</form>
+					</div>	
+					{% endif %}				
+				</div>
+				<div class="col-xs-12 hidden-xs">
+					<!-- 社区信息款 -->
+					<div class="rightBox">
+						<h3>社区信息</h3>
+						<p>中文社区</p>
+						<p>英文社区</p>
+					</div>
+				</div>	
+			</div>
+			</div>
+			<!-- 主体左边 -->
+			<div class="col-sm-8 col-sm-pull-4  col-xs-12">
+				{% block main %}{% endblock%}
+			</div>
+
+		</div>
+		
+	</main>
+	<!-- 主体结束 -->
+
+	<!-- 页脚 -->
+	<footer>
+		<div>版权所有&copy; by C阶</div>
+	</footer>
+
+<script src="/public/js/jquery.min.js"></script>
+<script src="/public/js/index.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
+<script src="/public/js/comment.js"></script>
+<script type="text/javascript">
+	// uParse('.content', {
+ //   	 rootPath: '/public/ueditor'
+	// })
+</script>
+</body>
+</html>
