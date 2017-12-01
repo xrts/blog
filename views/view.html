@@ -14,7 +14,7 @@
 		</p>
 		
 		<p class="content">{{contents.content|safe}}</p>
-		<div class="function"><a href="javascript:history.go(-1);location=document.referrer">返回</a></div>
+		<a href="javascript:history.go(-1);location=document.referrer"><button class="btn btn-primary ">返&nbsp;&nbsp;&nbsp;&nbsp;回</button></a>
 	</div>
 
 
@@ -55,5 +55,8 @@
 
 
 </div>
+<script type="text/javascript">
+	'{{contents.content|safe|replace('\r\n', '\n', 'g')}}'
+</script>
 
 {% endblock %}

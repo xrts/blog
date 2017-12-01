@@ -34,7 +34,7 @@ router.get('/user',function(req,res,next){
 	//获取数据库内的数据存入users中
 
 	var page= Number(req.query.page || 1);
-	var limit=4;
+	var limit=10;
 	var pages=0;
 
 	//统计数据总条数
@@ -78,7 +78,7 @@ router.get('/user',function(req,res,next){
 //分类首页
 router.get('/category',function(req,res,next){
 	var page= Number(req.query.page || 1);
-	var limit=4;
+	var limit=10;
 	var pages=0;
 
 		//计算总页数
@@ -234,7 +234,7 @@ router.get('/category/delete',function(req,res,next){
 //内容管理首页
 router.get('/content',function(req,res,next){
 	var page= Number(req.query.page || 1);
-	var limit=4;
+	var limit=10;
 	var pages=0;
 
 	query('SELECT count(*) ct FROM contents',function(err,rs,fields){

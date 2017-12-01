@@ -34,7 +34,7 @@
 
         //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的从新定义
 
-        , toolbars: [["fullscreen","source","undo","redo","insertunorderedlist","insertorderedlist","link","unlink","help","attachment","simpleupload","insertimage","emotion","pagebreak","date","bold","italic","fontborder","strikethrough","underline","forecolor","justifyleft","justifycenter","justifyright","justifyjustify","paragraph","rowspacingbottom","rowspacingtop","lineheight"]]
+        , toolbars: [["fullscreen","source","undo","redo","insertunorderedlist","insertorderedlist","link","unlink","attachment","simpleupload","insertimage","emotion","pagebreak","date","fontfamily","fontsize","bold","italic","fontborder","strikethrough","underline","forecolor","justifyleft","justifycenter","justifyright","justifyjustify","paragraph","lineheight","insertcode"]]
         //当鼠标放在工具栏上时显示的tooltip提示,留空支持自动多语言配置，否则以配置值为准
         //,labelMap:{
         //    'anchor':'', 'undo':''
@@ -153,6 +153,26 @@
         //,maxListLevel : 3 //限制可以tab的级数, 设置-1为不限制
 
         //,autoTransWordToList:false  //禁止word中粘贴进来的列表自动变成列表标签
+
+        //fontfamily
+        //字体设置 label留空支持多语言自动切换，若配置，则以配置值为准
+        ,'fontfamily':[
+           { label:'',name:'songti',val:'宋体,SimSun'},
+           { label:'',name:'kaiti',val:'楷体,楷体_GB2312, SimKai'},
+           { label:'',name:'yahei',val:'微软雅黑,Microsoft YaHei'},
+           { label:'',name:'heiti',val:'黑体, SimHei'},
+           { label:'',name:'lishu',val:'隶书, SimLi'},
+           { label:'',name:'andaleMono',val:'andale mono'},
+           { label:'',name:'arial',val:'arial, helvetica,sans-serif'},
+           { label:'',name:'arialBlack',val:'arial black,avant garde'},
+           { label:'',name:'comicSansMs',val:'comic sans ms'},
+           { label:'',name:'impact',val:'impact,chicago'},
+           { label:'',name:'timesNewRoman',val:'times new roman'}
+        ]
+
+        //fontsize
+        //字号
+        ,'fontsize':[10, 11, 12, 14, 16, 18, 20, 24, 36]
 
         //paragraph
         //段落格式 值留空时支持多语言自动识别，若配置，则以配置值为准
