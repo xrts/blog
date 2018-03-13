@@ -5,7 +5,7 @@ var swig = require('swig');
 //加载body-parser，用来处理post提交过来的数据
 var bodyParser = require('body-parser');
 //加载富文本编辑器
-var ueditor = require('ueditor')
+var ueditor = require('ueditor');
 var mysql = require('mysql');
 
 //加载cookies模块
