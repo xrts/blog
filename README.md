@@ -14,7 +14,7 @@
 ##### 后台内容列表
 ![cj](https://github.com/xrts/blog/blob/master/public/images/cj_admin_content.png)
 ##### 后台内容添加
-![cj](https://github.com/xrts/blog/blob/master/public/images/cj_admin_index.png)
+![cj](https://github.com/xrts/blog/blob/master/public/images/cj_admin_add.png)
 
 ### 预览地址
 * [我的博客](http//118.89.148.133)
