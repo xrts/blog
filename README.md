@@ -1,5 +1,5 @@
 # blog
-我的博客~~
+[我的博客~~](http://118.89.148.133)
 
 ### 下载到本地运行须知
 1. 下载后要在本地运行请先
@@ -16,5 +16,3 @@
 ##### 后台内容添加
 ![cj](https://github.com/xrts/blog/blob/master/public/images/cj_admin_add.png)
 
-### 预览地址
-* [我的博客](http//118.89.148.133)
