@@ -1,6 +1,6 @@
 header{
   height: 200px;
-  background-image: url('/public/images/header_bg_01.jpg');
+  background-image: url('public/images/header_bg_01.jpg');
   background-repeat: repeat-x;
   background-position: -25px 0;
   -webkit-background-size: cover;
