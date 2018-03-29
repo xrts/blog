@@ -24,7 +24,7 @@ router.get('/',function(req,res,next){
 	var contents=[];
 	data.cid = req.query.cid || '';
 	var page= Number(req.query.page || 1);
-	var limit=4;
+	var limit=8;
 	var pages=0;
 	var count=0;
 	var sql ;
