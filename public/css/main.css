@@ -54,6 +54,11 @@ form p{
 	text-align: center;
 }
 
+.mainRight .loginBtn,.mainRight .myreset,.mainRight .regbtn input{
+	margin: 10px  auto 0;
+
+}
+
 footer{
 	background: url(../images/header_bg.jpg) no-repeat 50% 50% ; 
 	height: 100px;
